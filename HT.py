@@ -1,7 +1,7 @@
-def final_answer(a,b):
+def final_answer(f_input_name,f_output_name):
   import time
   start = time.time()
-  with open(a) as fr:
+  with open(f_input_name) as fr:
     import xml.etree.ElementTree as et
     tree = et.ElementTree()
     tree.parse(fr)
@@ -68,7 +68,7 @@ def final_answer(a,b):
               table[i][j] = 0
             else:
               table[i][j] = float('inf')
-  with open(b, "w") as fw:
+  with open(f_output_name, "w") as fw:
     for i in range(nets_number):
       for j in range(nets_number):
         print("%.6f" %(table[i][j]),end = ',',file = fw)
